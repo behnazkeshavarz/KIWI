@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<title>KIWI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header>
+    <h1>🥝 KIWI</h1>
+    <div class="header-right">
+      <span id="count" class="badge">0</span>
+      <button id="domainBtn" class="toggle-btn" title="Set your domain to auto-check rankings">🌐</button>
+      <button id="toggleBtn" class="toggle-btn" title="Pause/resume collecting">⏸</button>
+    </div>
+  </header>
+
+  <div id="domainPanel" class="settings-panel">
+    <div class="settings-heading">
+      <span>Your domain</span>
+      <span class="info-icon" title="Set your own domain (e.g. example.com). KIWI can then check, for any keyword, whether your domain shows up in Google's results and grab the exact ranking URL automatically.">&#8505;</span>
+    </div>
+    <div class="brand-add-row">
+      <input id="domainInput" type="text" placeholder="e.g. example.com" dir="ltr" />
+      <button id="domainSaveBtn" type="button">Save</button>
+    </div>
+  </div>
+
+  <div id="pausedBanner" class="paused-banner">⏸ Collection paused — new suggestions won't be saved.</div>
+
+  <div class="toolbar">
+    <input id="filter" type="text" placeholder="Search in list..." />
+    <div class="chips-row">
+      <div class="chips" id="intentChips">
+        <button class="chip active" data-intent="all">All</button>
+        <button class="chip" data-intent="transactional">🟢 Transactional</button>
+        <button class="chip" data-intent="commercial">🟠 Commercial</button>
+        <button class="chip" data-intent="navigational">🟣 Navigational</button>
+        <button class="chip" data-intent="informational">🔵 Informational</button>
+        <button class="chip" data-intent="other">⚪ Other</button>
+      </div>
+      <span class="info-icon" title="Colors show search intent: 🟢 Transactional = ready to buy, 🟠 Commercial = comparing options, 🟣 Navigational = looking for a specific brand/site, 🔵 Informational = wants to learn something, ⚪ Other = unclear. Click a color to filter the list.">&#8505;</span>
+    </div>
+    <div class="chips-row">
+      <button class="chip star-chip" id="starredOnly" type="button">☆ Starred only</button>
+      <span class="info-icon" title="Star the keywords you've actually decided to use, then toggle this to see just your shortlist — handy once the list gets long.">&#8505;</span>
+    </div>
+  </div>
+
+  <div id="groups"></div>
+  <p id="empty" class="empty">No keywords collected yet. Just search on Google — the "People also search for" and "Related searches" suggestions get added automatically.</p>
+
+  <footer>
+    <button id="copyBtn">Copy All</button>
+    <button id="exportTxt">Export TXT</button>
+    <button id="exportCsv">Export CSV</button>
+    <button id="clearBtn" class="danger">Clear List</button>
+  </footer>
+
+  <div class="footer-note">
+    <span>Google's page structure changes sometimes — if something looks off, it may need an update.</span>
+    <a href="https://www.linkedin.com/in/behnaz-keshavarz-754081321/" target="_blank" rel="noopener noreferrer">
+      Questions, feedback, or want to collaborate? Connect on LinkedIn
+    </a>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
